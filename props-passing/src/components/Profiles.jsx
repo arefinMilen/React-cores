@@ -1,34 +1,44 @@
-import React from 'react'
-import { User } from 'lucide-react'
-const Profiles = () => {
+import React from "react";
+import { User } from "lucide-react";
+const Profiles = (props) => {
   return (
-    <div className='p-4 bg-gray-200'>
-        <div className='p-3 border-gray-400 border-2 rounded-2xl w-120 h-150 bg-white'>
-        <div className='flex justify-between'>
-            <h2 className='bg-green-500 text-white '>available</h2>
-            <h3>$40/hr</h3>
+    <div className="h-full">
+      <div className="p-3 border-gray-400 border-2 rounded-2xl h-full bg-white flex flex-col justify-between">
+        <div className="flex justify-between">
+          <h2 className="bg-green-500 text-white p-1 rounded-xl">{props.status}</h2>
+          <h3 className="font-bold text-3xl">{props.rate}</h3>
         </div>
-        <div className='flex flex-col items-center gap-2 my-4'>
-            <img className='w-40 h-40 rounded-full object-fill ' src="https://images.unsplash.com/photo-1652781269535-f13e466904a2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGQlMjBwaG90b3MlMjBwcm9maWxlfGVufDB8fDB8fHww" alt="profile"/>
-            <h2>Maria</h2>
-            <h3>mobile designer</h3>
-            <h4>freelancer</h4>
+        <div className="flex flex-col items-center gap-2">
+          <img
+            className="w-40 h-40 rounded-full object-fill "
+            src={props.image}
+            alt="profile"
+          />
+          <h2 className="font-bold">{props.name}</h2>
+          <h3 className="text-gray-700">{props.role}</h3>
+          <div className="flex items-center gap-2 text-blue-500 mb-4">
+            <User size={20} />
+            <h4>{props.type}</h4>
+          </div>
         </div>
-        <div className='items-center '>
-            <span className='m-2'>PHP</span>
-            <span className='m-2'>JavaScript</span>
-            <span className='m-2'>React</span>
-            <span className='m-2'>Node.js</span>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, cumque!</p>
-
+        <div className="flex justify-center flex-wrap gap-2 mb-3">
+          {props.skills.map((skill, index) => (
+            <span key={index} className="border-2 p-1 rounded-xl bg-blue-50 text-blue-600">{skill}</span>
+          ))}
         </div>
-        <div>
-            <hr />
-            <button>View Profile</button>
+        <div className="text-center">
+          <p>
+            {props.bio}
+          </p>
         </div>
+        <div className="flex justify-center">
+          <button className="border-t-2 p-4 mt-4  hover:bg-blue-500 hover:text-white transition">
+            View Profile
+          </button>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profiles
+export default Profiles;
