@@ -22,9 +22,9 @@ const Profiles = (props) => {
           </div>
         </div>
         <div className="flex justify-center flex-wrap gap-2 mb-3">
-          {props.skills.map((skill, index) => (
-            <span key={index} className="border-2 p-1 rounded-xl bg-blue-50 text-blue-600">{skill}</span>
-          ))}
+        {props.skills.map((skill, index) => (
+          <span key={index} className="border-2 p-1 rounded-xl bg-blue-50 text-blue-600">{skill}</span>
+        ))}
         </div>
         <div className="text-center">
           <p>
