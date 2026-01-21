@@ -123,21 +123,21 @@ const App = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-gray-100 min-h-screen">
-      {profiles.map(function (profile, index) {
+      {profiles.map((profile,index)=>{
         return (
-          <div key={index}>
-            <Profiles
-              status={profile.status}
-              rate={profile.rate}
-              image={profile.image}
-              name={profile.name}
-              role={profile.role}
-              type={profile.type}
-              skills={profile.skills}
-              bio={profile.bio}
-            />
+          <div key={index}> 
+        <Profiles
+          status={profile.status}
+          rate={profile.rate}
+          image={profile.image}
+          name={profile.name} 
+          role={profile.role}
+          type={profile.type}
+          skills={profile.skills}
+          bio={profile.bio}
+          />
           </div>
-        );
+        )
       })}
     </div>
   );
